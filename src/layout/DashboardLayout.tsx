@@ -5,6 +5,9 @@ import {
 import {
   SidebarContent, DashboardHeader,
 } from '@/components'
+import {
+  motion, AnimatePresence,
+} from 'framer-motion'
 
 export const DashboardLayout = ({ children }: { children: ReactElement }) => {
   const {
@@ -48,7 +51,17 @@ export const DashboardLayout = ({ children }: { children: ReactElement }) => {
           as="main"
           p="4"
         >
-          {children}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={location.pathname}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {children}
+            </motion.div>
+          </AnimatePresence>
         </Box>
       </Box>
     </Box>
