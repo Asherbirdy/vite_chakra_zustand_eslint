@@ -25,23 +25,6 @@ const Home: FunctionComponent = (): ReactElement => {
   return (
     <Box>
 
-      <Text my={10}>
-        Edit
-        {' '}
-        <Code>src/pages/Home.tsx</Code>
-        {' '}
-        and save to reload.
-        {' '}
-        <Link
-          color="teal.500"
-          href="https://chakra-ui.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Chakra
-        </Link>
-      </Text>
-
       <Tooltip
         label="This will open a modal"
         placement="top"
