@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { NavBar } from '@/components/common/Public/NavBar'
+import { NavBar } from '@/components'
 export const DefaultLayout = ({ children }: { children: ReactElement }) => {
   return (
     <div>
