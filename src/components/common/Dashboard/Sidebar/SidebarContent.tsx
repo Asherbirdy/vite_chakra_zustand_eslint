@@ -48,6 +48,7 @@ export const SidebarContent = ({
       </Flex>
       {LinkItems.map((link) => (
         <NavItem
+          onClick={onClose}
           key={link.name}
           icon={link.icon}
           route={link.route}
