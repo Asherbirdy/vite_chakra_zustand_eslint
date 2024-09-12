@@ -13,7 +13,7 @@ import {
 import { ColorModeSwitcher } from '../ColorModeSwitcher'
 import { useCounterStore } from '@/stores/counterStore'
 
-export const NavBar: FunctionComponent = (): ReactElement => {
+export const WebsiteHeader: FunctionComponent = (): ReactElement => {
   const { colorMode } = useColorMode()
   const count = useCounterStore((state) => state.count)
   return (

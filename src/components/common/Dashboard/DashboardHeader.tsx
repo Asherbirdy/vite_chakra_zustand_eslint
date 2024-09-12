@@ -9,7 +9,7 @@ interface MobileProps extends FlexProps {
   onOpen: () => void
 }
 
-export const Header = ({
+export const DashboardHeader = ({
   onOpen, ...rest
 }: MobileProps) => {
   return (

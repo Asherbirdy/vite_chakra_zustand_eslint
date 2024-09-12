@@ -1,9 +1,9 @@
 // ** app
 
 // ** common
-export { SidebarContent } from './common/Dashboard/Sidebar/SidebarContent'
-export { NavItem } from './common/Dashboard/Sidebar/NavItem'
-export { LinkItems } from './common/Dashboard/Sidebar/LinkItems'
-export { Header } from './common/Dashboard/Header'
-export { NavBar } from './common/Website/NavBar'
-export { ColorModeSwitcher } from './common/ColorModeSwitcher'
+export * from './common/Dashboard/Sidebar/SidebarContent'
+export * from './common/Dashboard/Sidebar/NavItem'
+export * from './common/Dashboard/Sidebar/LinkItems'
+export * from './common/Dashboard/DashboardHeader'
+export * from './common/Website/WebsiteHeader'
+export * from './common/ColorModeSwitcher'
