@@ -3,7 +3,7 @@ import {
   Box, useColorModeValue, useDisclosure, Drawer, DrawerOverlay, DrawerContent,
 } from '@chakra-ui/react'
 import {
-  SidebarContent, Header,
+  SidebarContent, DashboardHeader,
 } from '@/components'
 
 export const DashboardLayout = ({ children }: { children: ReactElement }) => {
@@ -43,7 +43,7 @@ export const DashboardLayout = ({ children }: { children: ReactElement }) => {
           md: 60,
         }}
       >
-        <Header onOpen={onOpen} />
+        <DashboardHeader onOpen={onOpen} />
         <Box
           as="main"
           p="4"
