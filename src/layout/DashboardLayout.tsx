@@ -1,4 +1,6 @@
-import { ReactElement } from 'react'
+import {
+  ReactElement, useEffect,
+} from 'react'
 import {
   Box, useColorModeValue, useDisclosure, Drawer, DrawerOverlay, DrawerContent,
 } from '@chakra-ui/react'
@@ -8,13 +10,22 @@ import {
 import {
   motion, AnimatePresence,
 } from 'framer-motion'
-import { useLocation } from 'react-router-dom'
+import {
+  useLocation, useNavigate,
+} from 'react-router-dom'
+import { dashboardBeforeEnter } from '@/router'
 
 export const DashboardLayout = ({ children }: { children: ReactElement }) => {
   const {
     isOpen, onOpen, onClose,
   } = useDisclosure()
   const location = useLocation()
+  const navigate = useNavigate()
+
+  // 使用 dashboard guard 來保護此 layout
+  useEffect(() => {
+    dashboardBeforeEnter(navigate)
+  }, [navigate])
 
   return (
     <Box
@@ -56,9 +67,18 @@ export const DashboardLayout = ({ children }: { children: ReactElement }) => {
           <AnimatePresence mode="wait">
             <motion.div
               key={location.pathname}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                y: -20,
+              }}
               transition={{ duration: 0.2 }}
               style={{ width: '100%' }}
             >
