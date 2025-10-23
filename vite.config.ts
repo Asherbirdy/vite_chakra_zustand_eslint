@@ -20,9 +20,9 @@ export default defineConfig({
     open: true, // Open the browser when the dev server starts
     port: 3000,
   },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-  },
+  // test: {
+  //   globals: true,
+  //   environment: 'jsdom',
+  // },
   resolve: { alias: { '@': path.resolve(__dirname, 'src') } },
 })
