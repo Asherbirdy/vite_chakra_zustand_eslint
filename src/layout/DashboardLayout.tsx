@@ -23,9 +23,9 @@ export const DashboardLayout = ({ children }: { children: ReactElement }) => {
   const navigate = useNavigate()
 
   // 使用 dashboard guard 來保護此 layout
-  useEffect(() => {
-    dashboardBeforeEnter(navigate)
-  }, [navigate])
+  // useEffect(() => {
+  //   dashboardBeforeEnter(navigate)
+  // }, [navigate])
 
   return (
     <Box

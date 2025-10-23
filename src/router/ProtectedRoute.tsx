@@ -1,6 +1,10 @@
-import { ReactElement, useEffect, useState } from 'react'
+import {
+  ReactElement, useEffect, useState,
+} from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Center, Spinner } from '@chakra-ui/react'
+import {
+  Center, Spinner,
+} from '@chakra-ui/react'
 import type { NavigationGuard } from './guards'
 
 interface ProtectedRouteProps {
