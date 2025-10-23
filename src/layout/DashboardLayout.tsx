@@ -8,11 +8,13 @@ import {
 import {
   motion, AnimatePresence,
 } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 
 export const DashboardLayout = ({ children }: { children: ReactElement }) => {
   const {
     isOpen, onOpen, onClose,
   } = useDisclosure()
+  const location = useLocation()
 
   return (
     <Box
@@ -54,10 +56,11 @@ export const DashboardLayout = ({ children }: { children: ReactElement }) => {
           <AnimatePresence mode="wait">
             <motion.div
               key={location.pathname}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
+              style={{ width: '100%' }}
             >
               {children}
             </motion.div>

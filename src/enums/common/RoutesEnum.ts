@@ -3,6 +3,6 @@ export enum RoutesPath {
   PublicHome = '/',
 
   // Dashboard Routes
-  DashboardHome = '/dashboard/',
+  DashboardHome = '/dashboard',
   DashboardSecondPage = '/dashboard/pageTwo',
 }

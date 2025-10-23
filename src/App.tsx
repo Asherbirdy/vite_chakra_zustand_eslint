@@ -1,17 +1,29 @@
-import { BrowserRouter } from 'react-router-dom'
-import Routing from './routes/Routing'
+import { BrowserRouter, useRoutes } from 'react-router-dom'
+import routes from '~react-pages'
 import ReactDOM from 'react-dom/client'
 import { ColorModeScript } from '@chakra-ui/react'
-import React from 'react'
+import React, { Suspense } from 'react'
 import theme from './theme'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Spinner, Center } from '@chakra-ui/react'
+
+function App() {
+  return (
+    <Suspense fallback={
+      <Center h="100vh">
+        <Spinner size="xl" />
+      </Center>
+    }>
+      {useRoutes(routes)}
+    </Suspense>
+  )
+}
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <ColorModeScript />
       <BrowserRouter>
-        <Routing />
+        <App />
       </BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>,
